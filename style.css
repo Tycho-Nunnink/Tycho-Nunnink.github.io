@@ -1,3 +1,58 @@
+#linkje{
+    float: right;
+    clear: right;
+    margin: 20px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: #ec3b13;
+    border: #d30000 3px solid;
+    border-radius: 10px;
+}
+#linkje:hover{
+    background-color: #f5680a;
+}
+#locatie{
+    float: right;
+    border: 3px black solid;
+    box-shadow: 10px 10px #6a6f7e;
+    margin-right: 30px;
+}
+#tafel{/*vliegende tafel(mischien moet hier een touw)*/
+    display: grid;
+    grid-template-rows: 200px;
+    width: 250px;
+    height: 450px;
+    border: 3px black solid;
+    float: right;
+}
+#tafel img{
+    margin-top: 200px;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    transition: 1s;
+}
+#tafel p{
+    grid-row: 1;
+    grid-column: 1;
+    padding: 50px;
+    margin-top: 200px;
+}
+#tafel:hover img{
+    margin-top: 0;
+    grid-row: 1;
+    grid-column: 1; 
+}
+#fototje {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
 html{
     padding: 0;
 }
@@ -6,21 +61,13 @@ body{
     margin: 0;
     background-color: #5BC0BE;
 }
-#tafel{/*vliegende tafel(mischien moet hier een touw)*/
-    padding-top: 250px;
-    width: 15%;
-    transition: 1s;
-    border: 3px black solid;
-}
-#tafel:hover{
-    padding-top: 0px;
-    padding-bottom: 250px;
-}
-.content{
+article{
     background-color: white;
+    border-radius: 10px;
     margin: 40px 100px;
     border: 3px black solid;
     padding: 10px;
+    height: 500px;
 }
 header a{
     height: 50px;
