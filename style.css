@@ -46,11 +46,15 @@
     grid-row: 1;
     grid-column: 1; 
 }
-#fototje {
+#fototje{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
+}
+#fototje img{
+    width: 200px;
+    height: 200px;
 }
 
 html{
