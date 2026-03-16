@@ -1,11 +1,20 @@
 // 0: noord, 1: oost, 2: zuid, 3: west, 4: leeg, 5:thuis
-
-const mazeToString = (maze) =>
+export const mazeToString = (maze) =>
     maze.map(
         (i) => i.map(
             (j) => "↑→↓←*H"[j]
         ).join(" ")
     ).join("\n"); // haskell zal mij nooit verlaten
+
+export function drawCell(ctx, cellSize, factor, maze, x, y)
+{
+    let dir = maze[y][x];
+    let startX = (dir == 3 ? 0 : 1) + 4 * x
+    let startY = (dir == 0 ? 0 : 1) + 4 * y
+    let width  = (dir == 1 ? 1 : 0) + cellSize
+    let height = (dir == 2 ? 1 : 0) + cellSize
+    ctx.fillRect(startX * factor, startY * factor, width * factor, height * factor);
+}
 
 function visitedAtDir(maze, pos, dir)
 {
@@ -28,7 +37,7 @@ function visitedAtDir(maze, pos, dir)
 const canMove = (maze, pos) =>
     !([0,1,2,3].every((dir) => visitedAtDir(maze, pos, dir))); // niet eens een return nodig, functional is de toekomst
 
-function genMaze(w, h)
+export function genMaze(w, h)
 {
     const random = x => Math.floor(Math.random() * x); // di's wel nice
     let dir;
@@ -71,4 +80,3 @@ function main()
     let maze = genMaze(10, 10);
     console.log(mazeToString(maze));
 }
-main();
