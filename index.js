@@ -1,6 +1,6 @@
 import {genMaze, drawCell, mazeToString} from "./maze.js"
 
-let factor        = 100;
+let factor        = 10;
 let width         = 21;
 let height        = 10;
 let cellSize      = 3;
