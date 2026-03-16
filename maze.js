@@ -6,14 +6,16 @@ export const mazeToString = (maze) =>
         ).join(" ")
     ).join("\n"); // haskell zal mij nooit verlaten
 
-export function drawCell(ctx, cellSize, factor, maze, x, y)
+export function drawCell(ctx, cellSize, factor, dir, x, y)
 {
-    let dir = maze[y][x];
     let startX = (dir == 3 ? 0 : 1) + 4 * x
     let startY = (dir == 0 ? 0 : 1) + 4 * y
-    let width  = (dir == 1 ? 1 : 0) + cellSize
-    let height = (dir == 2 ? 1 : 0) + cellSize
-    ctx.fillRect(startX * factor, startY * factor, width * factor, height * factor);
+    let width  = (dir % 2 == 1 && dir != 5 ? 1 : 0) + cellSize
+    let height = (dir % 2 == 0 ? 1 : 0) + cellSize
+    ctx.fillRect(startX * factor,
+                 startY * factor,
+                 width  * factor,
+                 height * factor);
 }
 
 function visitedAtDir(maze, pos, dir)
