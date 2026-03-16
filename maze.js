@@ -49,6 +49,9 @@ export function genMaze(maze)
     let pos   = {x: random(w), y: random(h)};
     let stack = [];
     // let maze  = Array(h).fill().map(() => Array(w).fill(4))
+    do
+        pos = {x: random(w), y: random(h)};
+    while (maze[pos.y][pos.x] == 6)
     maze[pos.y][pos.x] = 5;
     
     while (pos != undefined) { // ik haat javascript
@@ -58,9 +61,9 @@ export function genMaze(maze)
         }
         stack.push(Object.assign({}, pos)); // echt een pesthekel aan deze taal
 
-        do {
+        do
             dir = random(4);
-        } while (visitedAtDir(maze, pos, dir));
+        while (visitedAtDir(maze, pos, dir));
 
         switch (dir) {
         case 0:
