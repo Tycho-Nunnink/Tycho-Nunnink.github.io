@@ -19,12 +19,14 @@ h1 {
 
 #canvas {
     width: 100%;
+    max-width: 1200px;
     background: white;
 }
 
-#flex {
+.flex {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 article {
@@ -33,4 +35,16 @@ article {
     border: 2px solid #44444d;
     padding: 20px;
     border-radius: 10px;
+}
+
+@media (max-width: 1400px) {
+    article { width: 60%;}
+}
+
+@media (max-width: 1200px) {
+    article { width: 70%;}
+}
+
+@media (max-width: 1000px) {
+    article { width: 80%;}
 }
