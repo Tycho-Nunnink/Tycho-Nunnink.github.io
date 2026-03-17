@@ -6,6 +6,19 @@ a.selfref {
     text-decoration: none;
 }
 
+.photos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.photos a {
+    width: 15%;
+}
+
+.photos a img {
+    width: 100%;
+}
+
 body {
     font-family: 'JetBrains Mono';
     margin: 0px;
