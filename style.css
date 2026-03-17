@@ -1,6 +1,16 @@
+@import "font.css";
+
+a.selfref {
+    color: white;
+    font-style: normal;
+    text-decoration: none;
+}
+
 body {
+    font-family: 'JetBrains Mono';
     margin: 0px;
     background: black;
+    color: white;
 }
 
 h1 {
@@ -10,4 +20,17 @@ h1 {
 #canvas {
     width: 100%;
     background: white;
+}
+
+#flex {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    width: 50%;
+    background-color: #33333d;
+    border: 2px solid #44444d;
+    padding: 20px;
+    border-radius: 10px;
 }
