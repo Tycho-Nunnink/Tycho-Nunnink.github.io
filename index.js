@@ -1,9 +1,9 @@
 import {genMaze, drawCell, mazeToString} from "./maze.js"
 
-let factor        = 10;
+let factor        = 20;
 let width         = 21;
 let height        = 10;
-let cellSize      = 3;
+let cellSize      = 6;
 let ctx           = document.getElementById("canvas").getContext("2d");
 ctx.canvas.width  = (width * (cellSize + 1) + 1) * factor;
 ctx.canvas.height = (height * (cellSize + 1) + 1) * factor;

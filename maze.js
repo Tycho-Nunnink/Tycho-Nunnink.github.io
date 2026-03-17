@@ -9,8 +9,8 @@ export const mazeToString = (maze) =>
 export function drawCell(ctx, cellSize, factor, dir, x, y)
 {
     if (dir == 6) return;
-    let startX = (dir == 3 ? 0 : 1) + 4 * x
-    let startY = (dir == 0 ? 0 : 1) + 4 * y
+    let startX = (dir == 3 ? 0 : 1) + (cellSize + 1) * x
+    let startY = (dir == 0 ? 0 : 1) + (cellSize + 1) * y
     let width  = (dir % 2 == 1 && dir != 5 ? 1 : 0) + cellSize
     let height = (dir % 2 == 0 ? 1 : 0) + cellSize
     ctx.fillRect(startX * factor,
