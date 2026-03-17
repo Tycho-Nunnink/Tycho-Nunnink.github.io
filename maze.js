@@ -42,12 +42,14 @@ const canMove = (maze, pos) =>
     ![NORTH,EAST,SOUTH,WEST].every((dir) => visitedAtDir(maze, pos, dir));
 // niet eens een return nodig, functional is de toekomst
 
-export function genMaze(maze)
+export async function genMaze(ctx, cellSize, factor, maze)
 {
     const random = x => Math.floor(Math.random() * x); // di's wel nice
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
     let h = maze.length
     let w = maze[0].length
     let dir;
+    let newDir;
     let pos   = {x: random(w), y: random(h)};
     let stack = [];
     // let maze  = Array(h).fill().map(() => Array(w).fill(4))
@@ -55,6 +57,7 @@ export function genMaze(maze)
         pos = {x: random(w), y: random(h)};
     while (maze[pos.y][pos.x] == WHITE)
     maze[pos.y][pos.x] = HOME;
+    drawCell(ctx, cellSize, factor, HOME, pos.x, pos.y);
     
     while (pos != undefined) {
         if (!(canMove(maze, pos))){
@@ -81,8 +84,11 @@ export function genMaze(maze)
         case WEST:
             pos.x -= 1;
         }
-        maze[pos.y][pos.x] = (dir + 2) % 4;
+        newDir = (dir + 2) % 4;
         // de magische som zodat de pijl de andere kant op wijst
+        maze[pos.y][pos.x] = newDir;
+        await sleep(50)
+        drawCell(ctx, cellSize, factor, newDir, pos.x, pos.y);
     }
     return maze;
 }
