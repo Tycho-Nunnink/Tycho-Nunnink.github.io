@@ -1,2 +1,2 @@
 # Tycho Nunnink portfoliowebsite
-bim bam boem
+dit is de repository voor mijn [portfoliowebsite](https://tycho-nunnink.github.io/)
