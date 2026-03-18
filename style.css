@@ -1,5 +1,16 @@
 @import "font.css";
 
+body {
+    font-family: 'JetBrains Mono';
+    margin: 0px;
+    background: black;
+    color: white;
+}
+
+a {
+    color: lightblue;
+}
+
 a.selfref {
     color: white;
     font-style: normal;
@@ -15,15 +26,8 @@ a.selfref {
     width: 15%;
 }
 
-.photos a img {
+img {
     width: 100%;
-}
-
-body {
-    font-family: 'JetBrains Mono';
-    margin: 0px;
-    background: black;
-    color: white;
 }
 
 h1 {
@@ -36,7 +40,7 @@ h1 {
     background: white;
 }
 
-.flex {
+.centre {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;

@@ -21,7 +21,7 @@ ctx.canvas.width  = (width * (cellSize + 1) + 1) * factor;
 ctx.canvas.height = (height * (cellSize + 1) + 1) * factor;
 ctx.fillStyle     = "black"; // zou niks moeten doen, maar je weet nooit hè
 
-await genMaze(ctx, cellSize, factor, maze)
+await genMaze(ctx, cellSize, factor, 25, maze)
 console.log(mazeToString(maze)) // eigenlijk voor debugging, maar ook wel leuke easteregg
 // dit was van voordat de maze werd geanimeerd, vond het te leuk om te verwijderen.
 // maze.entries().forEach(([y, collumn]) =>
